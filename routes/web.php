@@ -14,3 +14,5 @@
 Route::get('/admin/dashboard', function () {
     return view('Admin.Pages.dashboard');
 });
+
+Route::get('/admin/allcategories', 'CategoriesController@index');
