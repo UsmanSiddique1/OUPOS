@@ -15,4 +15,27 @@ Route::get('/admin/dashboard', function () {
     return view('Admin.Pages.dashboard');
 });
 
-Route::get('/admin/allcategories', 'CategoriesController@index');
+// Categories Area
+
+Route::get('/admin/categories/show', 'CategoriesController@index');
+Route::get('/admin/categories/add', 'CategoriesController@create');
+Route::post('/admin/addcategories/store', 'CategoriesController@store');
+Route::get('/admin/category/edit/{id}', 'CategoriesController@edit');
+Route::post('/admin/category/update', 'CategoriesController@update');
+
+
+// Products Area
+
+Route::get('/adming/products/show', 'ProductsController@index');
+Route::get('/admin/products/add', 'ProductsController@create');
+Route::post('/admin/product/store', 'ProductsController@store');
+Route::get('/admin/product/edit/{id}', 'ProductsController@edit');
+Route::post('/admin/product/edit/update', 'ProductsController@update');
+
+// Supplier Area
+
+Route::get('/admin/suppliers/show', 'SupplierController@show');
+Route::get('/admin/suppliers/add', 'SupplierController@show');
+Route::get('/admin/suppliers/store', 'SupplierController@show');
+Route::get('/admin/suppliers/edit/{id}', 'SupplierController@show');
+Route::get('/admin/suppliers/edit/update', 'SupplierController@show');

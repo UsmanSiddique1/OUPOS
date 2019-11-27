@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Categories;
 
-class CategoriesController extends Controller
+class ProductsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,14 +13,7 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        try {
-
-            return view('Admin.Pages.Categories.showcategories');
-            
-        } catch (Exception $e) {
-            
-        }
-        
+        return view('Admin.Pages.Products.allproducts');
     }
 
     /**
@@ -31,14 +23,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        try {
-            return view('Admin.Pages.Categories.addcategories');
-            
-        } catch (Exception $e) {
-            
-        }
-        
-
+        return view('Admin.Pages.Products.addproducts');
     }
 
     /**
@@ -47,17 +32,10 @@ class CategoriesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        try {
-
-            $addcategory = Categories::store();
-            return $addcategory;
-            
-        } catch (Exception $e) {
-            
-        }
-        
+        $storeproduct = Products::store();
+        return $storeproduct;
     }
 
     /**
@@ -68,14 +46,7 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
-        try {
-            
-            $showsinglecategory = Categories::where('id', $id)->get();
-            return view('Admin.Pages.Categories.singlecategory', compact('$showsinglecategory'));
-
-        } catch (Exception $e) {
-            
-        }
+        //
     }
 
     /**
@@ -86,15 +57,7 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        try {
-            
-            $editsinglecategory = Categories::where('id', $id)->get();
-            return view('Admin.Pages.Categories.editcategory', compact('editsinglecategory'));
-            
-        } catch (Exception $e) {
-            
-        }
-        
+        //
     }
 
     /**

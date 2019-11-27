@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Categories;
 
-class CategoriesController extends Controller
+class SupplierController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,13 +14,11 @@ class CategoriesController extends Controller
     public function index()
     {
         try {
+            return view('Admin.Pages.Supplier.showsuppliers.blade.php');
 
-            return view('Admin.Pages.Categories.showcategories');
-            
         } catch (Exception $e) {
             
         }
-        
     }
 
     /**
@@ -31,14 +28,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        try {
-            return view('Admin.Pages.Categories.addcategories');
-            
-        } catch (Exception $e) {
-            
-        }
-        
-
+        //
     }
 
     /**
@@ -49,15 +39,7 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        try {
-
-            $addcategory = Categories::store();
-            return $addcategory;
-            
-        } catch (Exception $e) {
-            
-        }
-        
+        //
     }
 
     /**
@@ -69,10 +51,8 @@ class CategoriesController extends Controller
     public function show($id)
     {
         try {
-            
-            $showsinglecategory = Categories::where('id', $id)->get();
-            return view('Admin.Pages.Categories.singlecategory', compact('$showsinglecategory'));
-
+            $ShowSingleSupplier = Supplier::where('id', $id)->get(); 
+            return view('Admin.Pages.Supplier.showsinglesupplier', compact('ShowSingleSupplier'));
         } catch (Exception $e) {
             
         }
@@ -87,14 +67,11 @@ class CategoriesController extends Controller
     public function edit($id)
     {
         try {
-            
-            $editsinglecategory = Categories::where('id', $id)->get();
-            return view('Admin.Pages.Categories.editcategory', compact('editsinglecategory'));
-            
+            $EditSingleSupplier = Supplier::where('id', $id)->get(); 
+            return view('Admin.Pages.Supplier.showsinglesupplier', compact('ShowSingleSupplier'));
         } catch (Exception $e) {
             
         }
-        
     }
 
     /**
