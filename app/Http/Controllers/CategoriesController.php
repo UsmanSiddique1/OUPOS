@@ -16,7 +16,10 @@ class CategoriesController extends Controller
     {
         try {
 
-            return view('Admin.Pages.Categories.showcategories');
+            $categories = Categories::all();
+            $i = 0;
+
+            return view('Admin.Pages.Categories.showcategories', compact('categories', 'i'));
             
         } catch (Exception $e) {
             
@@ -87,7 +90,7 @@ class CategoriesController extends Controller
     public function edit($id)
     {
         try {
-            
+
             $editsinglecategory = Categories::where('id', $id)->get();
             return view('Admin.Pages.Categories.editcategory', compact('editsinglecategory'));
             

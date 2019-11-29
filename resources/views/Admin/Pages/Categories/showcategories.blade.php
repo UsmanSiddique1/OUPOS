@@ -46,10 +46,14 @@
                 </thead>
 
                 <tbody>
+
                   @foreach($categories as $data)
                   <tr>
-                    <td>{{i++}}</td>
-                    <td>{{$data->name}}</td>
+                    <td>{i++}</td>
+                    <td>this</td>
+                    <td>this</td>
+                    <td>this</td>
+                    <td>this</td>
                   </tr>
                   @endforeach
                 </tbody>
