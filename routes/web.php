@@ -27,8 +27,8 @@ Route::post('/admin/category/update', 'CategoriesController@update');
 
 // Products Area
 
-Route::get('/adming/products', 'ProductsController@index');
-Route::get('/adming/products/show', 'ProductsController@show');
+Route::get('/admin/products', 'ProductsController@index');
+Route::get('/admin/products/show', 'ProductsController@show');
 Route::get('/admin/products/add', 'ProductsController@create');
 Route::post('/admin/product/store', 'ProductsController@store');
 Route::get('/admin/product/edit/{id}', 'ProductsController@edit');
